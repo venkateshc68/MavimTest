@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>This is cancel order page</h1>
+        <input style="padding: 10px; font: size 17px;border:1px solid gray;width:30%;background:#f1f1f1" type="text" id="id" placeholder="Enter ID.." name="search2">
+       <input type="submit" id="add" value="Cancel">
+  <span id="msg"></span>
+    </body>
+
+      <script type = "text/javascript">
+        $(document).ready( function () {
+        $('#add').click( function(){
+        
+        var ajxReq = $.ajax( 'https://61b6012ac95dd70017d40dcd.mockapi.io/api/V1/Pizza/id', {
+        type : 'DELETE'
+        });
+        ajxReq.success( function ( data, status, jqXhr ) {
+        $( "p" ).append( "Request is Success." );
+        });
+        ajxReq.error( function ( jqXhr, textStatus, errorMessage ) {
+        $( "p" ).append( "Request is Fail.");
+        });
+        });
+        });
+        </script>
+</html> 

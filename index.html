@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>My App</title>
+
+    <link href="index.css" rel="stylesheet">
+  </head>
+  
+  
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Pizza Shop</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          
+       
+          <a href="cancel.html" class="nav-item nav-link" >Cancel Order</a>
+          <a href="#openModal-about" class="nav-item nav-link">Add Order</a>
+          <input type="submit" onclick="logout()" value="Logout">
+          
+         
+        </div>
+      </div>
+    </nav>
+    <h1 style="color: darkblue;text-align: center;">This is List of Pizzas</h1>
+                
+                <!--modals-->
+                  <div id="openModal-about" class="modalDialog">
+                      <div>
+                         <a href="#close" title="Close" class="close">X</a>
+                         <h2>Add Order</h2>
+                         <div class="filterform">
+                           <form id="filter">
+                             <div class="drpdwn">
+                               select crust:
+                               <select id="type" name="type" class="filterselection">
+                                 
+                                 <option value ="classic" id="cl">classic</option>
+                                 <option value="cheese" id="ch">cheese</option>
+
+                               </select>
+                             </div>
+                           </form>
+                         </div>
+                         <div class="filterform">
+                          <form id="filter">
+                            <div class="drpdwn">
+                              select flavour:
+                              <select id="type" name="type" class="filterselection">
+                                
+                                <option value="classic" id="chh">Cheese</option>
+                                <option value="cheese"id="ve">Veggie</option>
+                                <option value="cheese"id="pep">Pepporini</option>
+                                <option value="cheese"id="me">Meat</option>
+                                <option value="cheese"id="ma">Marghareta</option>
+
+
+                              </select>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="filterform">
+                          <form id="filter">
+                            <div class="drpdwn">
+                              select Size:
+                              <select id="type" name="type" class="filterselection">
+                                
+                                <option value="classic"id="sm">Small</option>
+                                <option value="cheese"id="md">Medium</option>
+                                <option value="cheese"id="la">large</option>
+                                <option value="cheese"id="fi">Filesta</option>
+                                
+
+
+                              </select>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="filterform">
+                          <form id="filter">
+                            <div class="drpdwn">
+                              table No:
+                              <select id="type" name="type" class="filterselection">
+                                
+                                <option value="classic"id="1">1</option>
+                                <option value="cheese"id="2">2</option>
+                                <option value="cheese"id="3">3</option>
+                                <option value="cheese"id="4">5</option>
+                                <option value="cheese"id="5">6</option>
+                                <option value="cheese"id="6">7</option>
+                                <option value="cheese"id="7">8</option>
+                                <option value="cheese"id="8">9</option>
+
+
+                                
+
+
+                              </select>
+                            </div>
+                          </form>
+                        </div>
+                        <input type='submit' id="add" value="Add Item">
+                       
+</div>
+<span id="msg"></span>
+                       
+                       
+                      
+                     
+                      </div>
+                      </div>
+                   <script src="index2.js"></script>                
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    
+<div id="cards">
+  <h1>This is Pizza List</h1>
+</div>
+<div id="results">
+
+</div>
+  <script>
+   $(document).ready(function(){
+     $('#add').click(function(){
+       var  classic=$('#cl').val();
+      var cheese=$('#ch').val();
+      var cheeses =$('#chh').val();
+      var veggie=$('#ve').val();
+      var pepporini=$('#pep').val();
+      var meat=$('#me').val();
+      var Marghareta=$('#ma').val();
+      var Small=$('#sm').val();
+      var Medium=$('#md').val();
+      var large=$('#la').val();
+      var Filesta=$('fi').value
+      var one=$('#1').val();
+      var two =$('#2').val();
+      var thr =$('#3').val();
+      var fou =$('#4').val();
+      var fiv =$('#5').val();
+      var six =$('#6').val();
+      var sev =$('#7').val();
+      var eig =$('#8').val();
+      var data='classic='+classic & 'cheese='+cheese & 'cheeses='+cheeses & 'veggie='+veggie & 'pepporini='+pepporini &'meat='+meat &'Marghareta='+Marghareta &'Small='+Small &'Medium='+Medium &'large='+large & 'Filesta='+Filesta
+     &'one='+one &'two='+two &'thr='+thr &'fou='+fou & 'fiv='+fiv &'six='+six & 'sev='+sev &'eig='+eig;
+      $.ajax({
+        type:"POST",
+        url:"https://61b6012ac95dd70017d40dcd.mockapi.io/api/V1/Pizza",
+        data:data,
+        success:function(result){
+          console.log(result);
+          $('#add').val('Order Added');
+          
+          $('#msg').html(html);
+        }
+      });
+      return false;
+     });
+   });
+      
+  </script>
+
+
+  </body>
+</html>
